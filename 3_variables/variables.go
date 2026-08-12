@@ -1,23 +1,23 @@
 package main
 
-import "fmt"
-
 func main() {
-	var name string = "golang"
+	// var name string = "golang"
 
-	// here the warn varibale infers the datatype would be like teh string only liekwise
+	// infer
+	// var name = "golang"
+	// var isAdult bool = true
 
-	var warn = "hello"
-	var num = 1
-
-	fmt.Println(warn)
-
-	fmt.Println(name)
-
-	fmt.Println(num)
+	// var age int = 30
 
 	// shorthand syntax
-	age := 21
+	// name := "golang"
 
-	fmt.Println(age)
+	// var name string
+	// name = "golang"
+
+	// var price float32 = 50.5
+	// var price = 50.5
+	// price := 50.5
+
+	// fmt.Println(price)
 }
