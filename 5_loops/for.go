@@ -16,4 +16,8 @@ func main() {
 	for i := 1; i <= 10; i++ {
 		fmt.Println("Hello", i)
 	}
+
+	for i := range 12 {
+		fmt.Println(i)
+	}
 }
