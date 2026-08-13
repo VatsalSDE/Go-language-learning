@@ -18,7 +18,7 @@ type order struct {
 	amount    float32
 	status    string
 	createdAt time.Time // nanosecond precision
-	customer
+	// customer
 }
 
 // func newOrder(id string, amount float32, status string) *order {
@@ -32,10 +32,10 @@ type order struct {
 // 	return &myOrder
 // }
 
-// // receiver type
-// func (o *order) changeStatus(status string) {
-// 	o.status = status
-// }
+// receiver type
+func (o *order) changeStatus(status string) {
+	o.status = status
+}
 
 // func (o order) getAmount() float32 {
 // 	return o.amount
@@ -46,18 +46,18 @@ func main() {
 	// 	name:  "john",
 	// 	phone: "1234567890",
 	// }
-	newOrder := order{
-		id:     "1",
-		amount: 30,
-		status: "received",
-		customer: customer{
-			name:  "john",
-			phone: "1234567890",
-		},
-	}
+	// newOrder := order{
+	// 	id:     "1",
+	// 	amount: 30,
+	// 	status: "received",
+	// 	customer: customer{
+	// 		name:  "john",
+	// 		phone: "1234567890",
+	// 	},
+	// }
 
-	newOrder.customer.name = "robin"
-	fmt.Println(newOrder)
+	// newOrder.customer.name = "robin"
+	// fmt.Println(newOrder)
 
 	// language := struct {
 	// 	name   string
@@ -80,15 +80,15 @@ func main() {
 	// myOrder.createdAt = time.Now()
 	// fmt.Println(myOrder.status)
 
-	// myOrder2 := order{
-	// 	id:        "2",
-	// 	amount:    100,
-	// 	status:    "delivered",
-	// 	createdAt: time.Now(),
-	// }
+	myOrder2 := order{
+		id:        "2",
+		amount:    100,
+		status:    "delivered",
+		createdAt: time.Now(),
+	}
 
 	// myOrder.status = "paid"
 
-	// fmt.Println("Order struct", myOrder2)
+	fmt.Println("Order struct", myOrder2.id, myOrder2.amount, myOrder2.status, myOrder2.createdAt)
 	// fmt.Println("Order struct", myOrder)
 }

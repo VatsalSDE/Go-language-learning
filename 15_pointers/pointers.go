@@ -2,16 +2,19 @@ package main
 
 import "fmt"
 
-// by value
+// by value that is copy
 // func changeNum(num int) {
 // 	num = 5
 // 	fmt.Println("In changeNum", num)
 // }
 
-// by reference
+// by reference]
+
+var age = 22
+
 func changeNum(num *int) {
-	*num = 5
-	fmt.Println("In changeNum", *num)
+	*num = 7
+	fmt.Println("In changeNum", num)
 }
 
 func main() {
@@ -19,7 +22,7 @@ func main() {
 	// changeNum(num)
 	changeNum(&num)
 
-	// fmt.Println("Memory address", &num)
+	fmt.Println("Memory address", &num)
 	fmt.Println("After changeNum in main", num)
 
 }
