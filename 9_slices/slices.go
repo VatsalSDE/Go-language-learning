@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"slices"
+)
+
 // slice -> dynamic
 // most used construct in go
 // + useful methods
@@ -9,7 +14,7 @@ func main() {
 	// fmt.Println(nums == nil)
 	// fmt.Println(len(nums))
 
-	// var nums = make([]int, 0, 5)
+	// var nums = make([]int, 0, 1)
 	// capacity -> maximum numbers of elements can fit
 	// fmt.Println(cap(nums))
 	// fmt.Println(nums == nil)
@@ -37,16 +42,15 @@ func main() {
 
 	// var nums = []int{1, 2, 3, 4, 5}
 	// fmt.Println(nums[0:1])
-	// fmt.Println(nums[:2])
-	// fmt.Println(nums[1:])
+	// fmt.Println(nums[:1])
+	// fmt.Println(nums[0:])
 
 	// slices
-	// var nums1 = []int{1, 2, 3}
-	// var nums2 = []int{1, 2, 4}
+	var nums1 = []int{1, 2, 3}
+	var nums2 = []int{1, 2, 3}
 
-	// fmt.Println(slices.Equal(nums1, nums2))
+	fmt.Println(slices.Equal(nums1, nums2))
 
 	// var nums = [][]int{{1, 2, 3}, {4, 5, 6}}
 	// fmt.Println(nums)
-
 }
