@@ -24,6 +24,6 @@ func main() {
 	fmt.Println(increment())
 	fmt.Println(increment())
 
-	fmt.Println(increment2) // so here only the fucntion address will be likewise printed
-	fmt.Println(increment2)
+	fmt.Println(increment2()) // so here only the fucntion address will be likewise printed
+	fmt.Println(increment2())
 }
