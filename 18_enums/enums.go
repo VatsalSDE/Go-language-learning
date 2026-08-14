@@ -5,9 +5,10 @@ import "fmt"
 // enumerated types
 
 type OrderStatus string
+type PaymentStatus string
 
 const (
-	Received  OrderStatus = "received"
+	Received  OrderStatus = "received" 
 	Confirmed             = "confirmed"
 	Prepared              = "prepared"
 	Delivered             = "delivered"

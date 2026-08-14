@@ -65,24 +65,60 @@ import "fmt"
 // 	newPayment.makePayment(100)
 // }
 
-type payment struct {
+// this is the contract
+
+type paymenter interface {
+	pay(amount float32)
 }
 
+type payment struct {
+	gateway paymenter
+}
+
+// this is breaking the open close principle as we are adding new payment gateway in the existing code
 func (p payment) makePayment(amount float32) {
-	razorpayinstance := razoray{}
-	razorpayinstance.pay(amount)
-	
+	// razorpayinstance := razoray{}
+	// razorpayinstance.pay(amount)
+	// stripeinstance := stripe{}
+	// stripeinstance.pay(amount)
+
+	// nowusing the instance we have created likewise
+	p.gateway.pay(amount)
+	// p.stripegateway.pay(amount) // but this is also breaking the open close principle as we are adding new payment gateway in the existing code
+	// which is still breaking the open close principle as we are adding new payment gateway in the existing code
+	// so we need to create a new interface and implement it in the payment struct
+
 }
 
 // now making for the razoray the struct
 type razoray struct {
+
 }
 
 func (r razoray) pay(amount float32) {
+
 	fmt.Println("Razorpay is doing the payment of ", amount)
+
+}
+
+
+type stripe struct {
+}
+
+func (s stripe) pay(amount float32) {
+
+	fmt.Println("Stripe is doing the payment of ", amount)
+
 }
 
 func main() {
-	newPayment := payment{}
+
+	// stripepayment := stripe{}
+	razorpaypayment := razoray{}
+	newPayment := payment{
+		gateway: razorpaypayment,
+	}
+
 	newPayment.makePayment(100)
+
 }
