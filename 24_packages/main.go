@@ -1,4 +1,4 @@
-package main
+package mai
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 	"github.com/fatih/color"
 )
 
-func main() {
+func mai() {
 	auth.LoginWithCredentials("codersgyan", "secret")
 	session := auth.GetSession()
 
