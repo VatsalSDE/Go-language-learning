@@ -1,5 +1,9 @@
 package main
 
+import (
+	"os"
+)
+
 func main() {
 	// f, err := os.Open("example.txt")
 	// if err != nil {
@@ -20,12 +24,12 @@ func main() {
 	// fmt.Println("file modified at:", fileInfo.ModTime())
 
 	// read file
-	// f, err := os.Open("example.txt")
-	// if err != nil {
-	// 	panic(err)
-	// }
+	f, err := os.Open("example.txt")
+	if err != nil {
+		panic(err)
+	}
 
-	// defer f.Close()
+	defer f.Close()
 
 	// buf := make([]byte, 12)
 	// d, err := f.Read(buf)
@@ -33,7 +37,7 @@ func main() {
 	// 	panic(err)
 	// }
 
-	// for i := 0; i < len(buf); i++ {
+	// for i := 0; i < d; i++ {
 	// 	println("data", d, string(buf[i]))
 	// }
 
