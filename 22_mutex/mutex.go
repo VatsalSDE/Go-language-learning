@@ -15,7 +15,7 @@ func (p *post) inc(wg *sync.WaitGroup) {
 		p.mu.Unlock()
 		wg.Done()
 	}()
-
+ 
 	p.mu.Lock()
 	p.views += 1
 }
